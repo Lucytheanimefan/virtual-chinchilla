@@ -28,7 +28,7 @@ var add,
 
 charSet = new Array('banana', 'bento', 'birthday_cake', 'bread', 'burrito', 'cake', 'candy', 'cheese', 'cherries', 'chocolate', 'cookie', 'corn', 'curry', 'dango', 'doughnut', 'egg', 'eggplant', 'fish_cake', 'flan', 'fried_shrimp', 'fries', 'grapes', 'green_apple', 'hamburger', 'honey_pot', 'hot_dog', 'ice_cream', 'icecream', 'lemon', 'lollipop', 'meat_on_bone', 'melon', 'oden', 'orange', 'peach', 'pear', 'pepper', 'pineapple', 'pizza', 'popcorn', 'poultry_leg', 'ramen', 'red_apple', 'rice_ball', 'rice_cracker', 'rice', 'shaved_ice', 'spaghetti', 'stew', 'strawberry', 'sushi', 'sweet_potato', 'taco', 'tomato', 'watermelon');
 
-width = $(window).width()/2;
+width = $(window).width() / 2;
 
 
 alert("Click me");
@@ -56,11 +56,14 @@ $("#myCanvas").click(function(e) {
 function touchedChin() {
     console.log("Clicked chin")
     $(".talk-bubble").remove();
-    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?", function(a) {
+
+
+    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", function(a) {
         $(".chin_row").prepend('<div class="talk-bubble tri-right round btm-left">' +
             '<div class="talktext">' +
             '<p>' + a[0].content + '</p></div></div>');
     });
+
 
 
 }
@@ -70,7 +73,7 @@ function feed() {
     console.log("currentFood: " + currentFood);
     if (currentFood > maxFood) {
         $(".chin_row").empty();
-          $(".chin_row").append('<div class="test">You OVERFED chin and chin died.</div><svg xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <filter id="squiggly-0"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/> <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6"/> </filter> <filter id="squiggly-1"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/> </filter> <filter id="squiggly-2"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/> </filter> <filter id="squiggly-3"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/> </filter> <filter id="squiggly-4"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/> </filter> </defs> </svg>')
+        $(".chin_row").append('<div class="test">You OVERFED chin and chin died.</div><svg xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <filter id="squiggly-0"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/> <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6"/> </filter> <filter id="squiggly-1"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/> </filter> <filter id="squiggly-2"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/> </filter> <filter id="squiggly-3"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/> </filter> <filter id="squiggly-4"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/> </filter> </defs> </svg>')
     } else {
         left = Math.floor(Math.random() * width);
         emoji = charSet[Math.floor(Math.random() * charSet.length)];
@@ -93,11 +96,11 @@ function play() {
     if (currentPlay > maxPlay) {
         $(".chin_row").empty();
         $(".chin_row").append('<div class="test">You OVERPLAYED chin and chin died from too much energy exertion.</div><svg xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <filter id="squiggly-0"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/> <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6"/> </filter> <filter id="squiggly-1"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/> </filter> <filter id="squiggly-2"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/> </filter> <filter id="squiggly-3"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/> </filter> <filter id="squiggly-4"> <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/> </filter> </defs> </svg>')
-        //$(".chin_row").append("<h1>You OVERPLAYED chin and chin died from too much energy exertion.</h1>");
+            //$(".chin_row").append("<h1>You OVERPLAYED chin and chin died from too much energy exertion.</h1>");
     } else {
         $(".canvas").remove()
         var num = getRandomInt(3, 5);
-        $(".chin_row").append('<div class="canvas canvas'+num+'"> <div class="spinner'+num+'"></div></div>')
+        $(".chin_row").append('<div class="canvas canvas' + num + '"> <div class="spinner' + num + '"></div></div>')
         currentPlay = currentPlay + 1;
         localStorage.setItem("play", currentPlay);
     }
@@ -122,6 +125,3 @@ function rgbToHex(r, g, b) {
         throw "Invalid color component";
     return ((r << 16) | (g << 8) | b).toString(16);
 }
-
-
-
