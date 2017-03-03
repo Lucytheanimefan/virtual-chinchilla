@@ -1,3 +1,88 @@
-#chin{
-	width: 70%;
+.chin_row {
+    position: relative;
 }
+
+#myCanvas {
+position: absolute;
+}
+
+body {
+    background-color: #9c9895;
+}
+
+.talk-bubble {
+	z-index: 1;
+	margin-top: 200px;
+	margin-left: 640px;
+    display: inline-block;
+    position: absolute;
+    max-width: 400px;
+    height: auto;
+    background-color: lightyellow;
+}
+
+
+/* talk bubble contents */
+
+.talktext {
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.talktext p {
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+
+.round {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+.tri-right.btm-left:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    border: 22px solid;
+    border-color: transparent transparent transparent lightyellow;
+}
+
+/*-----food-------*/
+.emoji {
+  position: absolute;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  width: 42px;
+  top: -64px;
+}
+
+.food {
+  background: grey;
+  position: absolute;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  height: 100vh;
+  width: 100vw;
+  top: 100vh;
+}
+

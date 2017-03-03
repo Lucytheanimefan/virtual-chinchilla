@@ -9,16 +9,22 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='plugins/bootstrap.min.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-    
 </head>
 
 <body>
-   
-    <body>
-        <img id = "chin" src="/static/img/chin.jpg">
-    </body>
 
+    <body>
+        <div class="container-fluid container">
+            <div class="row chin_row">
+                <canvas id="myCanvas"></canvas>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><button class="btn" onclick="feed()">Feed</button></div>
+                <div class="col-md-6"><button class="btn" onclick="play()">Play</button></div>
+            </div>
+        </div>
+    </body>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/bootstrap.min.js') }}"></script>
-
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
