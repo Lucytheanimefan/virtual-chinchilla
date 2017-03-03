@@ -56,7 +56,7 @@ $("#myCanvas").click(function(e) {
 function touchedChin() {
     console.log("Clicked chin")
     $(".talk-bubble").remove();
-    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?", function(a) {
         $(".chin_row").prepend('<div class="talk-bubble tri-right round btm-left">' +
             '<div class="talktext">' +
             '<p>' + a[0].content + '</p></div></div>');
